@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CoreClass index{% endblock %}
+
+{% block body %}
+    <h1>CoreClass index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for core_class in core_classes %}
+            <tr>
+                <td>{{ core_class.id }}</td>
+                <td>{{ core_class.name }}</td>
+                <td>{{ core_class.description }}</td>
+                <td>{{ core_class.image }}</td>
+                <td>
+                    <a href="{{ path('app_core_class_show', {'id': core_class.id}) }}">show</a>
+                    <a href="{{ path('app_core_class_edit', {'id': core_class.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_core_class_new') }}">Create new</a>
+{% endblock %}
