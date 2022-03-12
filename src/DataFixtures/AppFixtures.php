@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\CoreClass;
+use App\Entity\Gear;
 use App\Entity\Hero;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -66,7 +67,7 @@ class AppFixtures extends Fixture
             'Gevodan',
         ];
 
-        // Generation of 10 heros
+        // Generation of 10 heroes
 
         for ($i = 0; $i < 10; $i++) {
             $randKey = rand(0, count($allClasses) - 1);
@@ -80,6 +81,28 @@ class AppFixtures extends Fixture
             $manager->persist($hero);
         }
 
+        // generation of 10 objects
+
+        $gearsName = [
+            'Casque',
+            'Torche',
+            'Corde',
+            'Sac à dos',
+            'Gourde',
+            'Flingue',
+            'Fouet',
+            'Arc',
+            'Couteau',
+            'Epée',
+        ];
+
+        for ($i = 0; $i < 10; $i++) {
+            $gear = new Gear();
+            $gear->setName($gearsName[$i]);
+            $gear->setDescription('description' . $i);
+
+            $manager->persist($gear);
+        }
 
 
 
