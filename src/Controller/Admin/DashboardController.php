@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Ancestry;
 use App\Entity\CoreClass;
 use App\Entity\Gear;
 use App\Entity\Hero;
@@ -50,6 +51,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Users', 'fas fa-list', User::class);
         yield MenuItem::linkToCrud('Heroes', 'fas fa-list', Hero::class);
         yield MenuItem::linkToCrud('Classes', 'fas fa-list', CoreClass::class);
+        yield MenuItem::linkToCrud('Ancestries', 'fas fa-list', Ancestry::class);
         yield MenuItem::linkToCrud('Gears', 'fas fa-list', Gear::class);
     }
 }

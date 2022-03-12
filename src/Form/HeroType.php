@@ -15,6 +15,7 @@ class HeroType extends AbstractType
             ->add('name')
             ->add('level')
             ->add('class')
+            ->add('ancestry')
         ;
     }
 

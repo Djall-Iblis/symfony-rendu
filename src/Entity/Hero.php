@@ -22,6 +22,9 @@ class Hero
     #[ORM\ManyToOne(targetEntity: CoreClass::class, inversedBy: 'heroes')]
     private $class;
 
+    #[ORM\ManyToOne(targetEntity: Ancestry::class, inversedBy: 'heroes')]
+    private $ancestry;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,18 @@ class Hero
     public function setClass(?CoreClass $class): self
     {
         $this->class = $class;
+
+        return $this;
+    }
+
+    public function getAncestry(): ?Ancestry
+    {
+        return $this->ancestry;
+    }
+
+    public function setAncestry(?Ancestry $ancestry): self
+    {
+        $this->ancestry = $ancestry;
 
         return $this;
     }
