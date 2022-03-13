@@ -6,6 +6,8 @@ security:
         App\Entity\User:
             algorithm: auto
 
+    access_denied_url: /hero
+
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
         # used to reload user from session & other features (e.g. switch_user)
@@ -37,6 +39,7 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/core/class, roles: ROLE_ADMIN }
+        - { path: ^/hero, roles: ROLE_USER }
 
 when@test:
     security:
