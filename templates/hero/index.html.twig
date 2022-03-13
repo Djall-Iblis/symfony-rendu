@@ -11,6 +11,8 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Level</th>
+                <th>Ancestry</th>
+                <th>Class</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -20,6 +22,8 @@
                 <td>{{ hero.id }}</td>
                 <td>{{ hero.name }}</td>
                 <td>{{ hero.level }}</td>
+                <td>{{ hero.class }}</td>
+                <td>{{ hero.ancestry }}</td>
                 <td>
                     <a href="{{ path('app_hero_show', {'id': hero.id}) }}">show</a>
                     <a href="{{ path('app_hero_edit', {'id': hero.id}) }}">edit</a>
